@@ -261,7 +261,7 @@ MinAndMaxNumber:
     
     #---------------------------------cos(x)---------------------------------
 cosX:
-lwc1 $f2,PI
+   lwc1 $f2,PI
    lwc1 $f3,tempNum
    lwc1 $f4,res
    lwc1 $f5,sign
@@ -273,13 +273,13 @@ lwc1 $f2,PI
    la $a0,InputMessage
    syscall
  
-   li $v0,6  # read float from user  
+   li $v0,6   # read float from user  
    syscall
    mul.s $f12,$f0,$f2    # store angle_degree*PI in $f12 
    div.s $f9,$f12,$f3    # divide value from $f12 /180 to convert angle from degree to radian 
    addi $t1,$0,1         # intialize counter i = 1 and store it in temporery register $t1
    loop1: 
-      bgt $t1,5,exit     # condition of the loop (while(i<=5))
+      bgt $t1,2,exit     # condition of the loop (while(i<=2))
       mul.s $f5,$f5,$f8  # sign =sign*-1; 
       mul $t2,$t1,2      # (2 * i)   
       addi $t3,$t2,-1    # (2 * i - 1)
@@ -303,13 +303,12 @@ lwc1 $f2,PI
    syscall
 # Display result value   
    li $v0,2
-   mov.s $f12,$f4
+   mov.s $f12,$f4 
    syscall 
 # terminite program
    li $v0,10
    syscall 
-    jr $ra
-    
+    jr $ra 
     # -----------------------------------sin(x)------------------------------------
  sinX:
      # Display start Message

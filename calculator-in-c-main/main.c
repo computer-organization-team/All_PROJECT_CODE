@@ -65,7 +65,7 @@ void Cos() {
     scanf("%f",&angle_degree);
     float angle_radian = angle_degree*PI/180;  //convert angle from radian to degree
     int i=1 ;
-    while(i<=5){
+    while(i<=2){
         sign =sign*-1;
         fact = fact * (2 * i - 1) * (2 * i);
         pow = pow * angle_radian * angle_radian;
