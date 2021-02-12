@@ -110,6 +110,25 @@ void factorization() {
     int n;
     printf("enter int number ");
     scanf("%d",&n);
+    float temp, sqrt;
+    sqrt = n / 2;
+    temp = 0;
+
+    // Iterate until sqrt is different of temp, that is updated on the loop
+    while(sqrt != temp){
+        // initially 0, is updated with the initial value of 128
+        // (on second iteration = 65)
+        // and so on
+        temp = sqrt;
+
+        // Then, replace values (256 / 128 + 128 ) / 2 = 65
+        // (on second iteration 34.46923076923077)
+        // and so on
+        sqrt = ( n/temp + temp) / 2;
+    }
+
+
+
 
 while (n%2 == 0)
     {
@@ -119,7 +138,7 @@ while (n%2 == 0)
 
     // n must be odd at this point.  So we can skip
     // one element (Note i = i +2)
-    for (int i = 3; i <= sqrt(n); i = i+2)
+    for (int i = 3; i <= sqrt; i = i+2)
     {
         // While i divides n, print i and divide n
         while (n%i == 0)
