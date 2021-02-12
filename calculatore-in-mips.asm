@@ -17,6 +17,8 @@ zero: 		.double 0.0
 prompt3:       .asciiz "Please enter three numbers for trinangle: \n"
 triConfirmation:	.asciiz "It's a triangle \n"
 errorMessage: 	.asciiz "Not a triangle \n"
+newline: .asciiz "\n"
+factorizationPrompt: .asciiz "Enter the number to factorize: "
 
 startMessage:          .asciiz "Enter the value of x (in degrees) \n"
 	endMessage:	       .asciiz "Sum of the sine series : \n"
@@ -388,8 +390,18 @@ lwc1 $f2,PI
    #-----------------------------------------factorization fun	------------------------------			
 factorization:
 
-    addi $s0, $zero, 2
-	addi $s1, $zero, 5
+	# Prompt the user
+	li $v0, 4
+	la $a0, factorizationPrompt
+	syscall
+	li $v0, 5
+	syscall
+	move $s1, $v0
+	li $v0, 4
+	la $a0, newline
+	syscall
+
+    	addi $s0, $zero, 2
 
 
 	twoFactorsLoop:
@@ -412,8 +424,7 @@ factorization:
 	
 	
 	
-	
-	
+
 	add $t0, $zero, $s1		# x = n
 	addi $t3, $zero, 0		# i=0
 	
