@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1608956716 source:d:\projects\code blocks pojects\computer organization project\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
+1609341197 source:d:\fcai-h\year three\first semester\computer organiztion (co)\project\project code\calculator in c\calculator-in-c\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
+1613092797 source:c:\users\20180402\desktop\calculator-in-assembly-main\calculator-in-c-main\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
