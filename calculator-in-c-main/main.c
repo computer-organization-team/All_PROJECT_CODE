@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define PI 3.14
 #include <math.h>
 #define MAX(a, b) (((a > b)) ? (a) : (b))
 #define MIN(a, b) (((a < b)) ? (a) : (b))
@@ -22,7 +23,9 @@ void Division() { if(b==0) printf("division over zero invalid"); printf("%lld/%l
 void FindMax() {
         ll size=0,max=-999999,x; printf("Enter list size \n"); scanf("%lld",&size);
         for(ll i=0; i<size; i++) { scanf("%lld",&x); max=MAX(max,x); }
-        printf("%lld",max); }
+        printf("%lld",max);
+
+}
 
 void Power() {
     double a,b;
@@ -57,11 +60,19 @@ void Sin() {
 }
 
 void Cos() {
-    double a;
-    printf("enter the angle in degree  \n");
-    scanf("%lf",&a);
-    a*=0.0174532925 ;
-    printf("%.2lf",cos(a));
+    printf("Enter angle in degree\n");
+    float angle_degree,res = 1,sign=1,fact=1,pow=1 ;
+    scanf("%f",&angle_degree);
+    float angle_radian = angle_degree*PI/180;  //convert angle from radian to degree
+    int i=1 ;
+    while(i<=5){
+        sign =sign*-1;
+        fact = fact * (2 * i - 1) * (2 * i);
+        pow = pow * angle_radian * angle_radian;
+        res = res +  (sign * pow)  / fact ;
+         i++;
+    }
+    printf("result is %f\n" ,res);
 }
 
 void Tan() {
